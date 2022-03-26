@@ -186,16 +186,13 @@ String.prototype.replaceAt = function(index, replacement) {
 
 String.prototype.replaceBetween = function(start, end, what) {
   return this.substring(0, start) + what + this.substring(end);
-};
-
+}
 
 function sendMessage() {
 
  let artist = document.getElementById("artist").value;
   let newString = fullCode.slice(22,390);
-  let isExecuted = confirm("Are you sure to send this PixelScript Snippet?");
-  if (isExecuted == true)
-  {
+
       const request = new XMLHttpRequest();
       request.open("POST", "https://discordapp.com/api/webhooks/957066821448630402/U3ejkdHZb7__Yurkwwi7ZjiWvg8lEUiRKTKa2F6jOaADwEQDLDxRe5OIErIO-pfrf29K");
 
@@ -209,4 +206,3 @@ function sendMessage() {
 
       request.send(JSON.stringify(params));
     }
-  }
