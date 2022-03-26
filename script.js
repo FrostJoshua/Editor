@@ -205,4 +205,4 @@ function sendMessage() {
       }
 
       request.send(JSON.stringify(params));
-    }
+    alert("Submission recieved, Thank you.")}
