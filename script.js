@@ -80,6 +80,97 @@ fullCode = str
 
          var element = document.getElementById("foot");
         element.innerHTML = str;
+
+
+
+        let newString = fullCode.slice(22,390)
+
+
+        var toAdd = document.createDocumentFragment();
+
+        const pArray = newString.split("");
+        var prevcolor1 = pArray.slice(0, 7).join("");
+        var prevcolor2 = pArray.slice(7, 14).join("");
+        var prevcolor3 = pArray.slice(14, 21).join("");
+        var prevcolor4 = pArray.slice(21, 28).join("");
+        var prevcolor5 = pArray.slice(28, 35).join("");
+        var prevcolor6 = pArray.slice(35, 42).join("");
+        var prevcolor7 = pArray.slice(42, 49).join("");
+        var prevcolor8 = pArray.slice(49, 56).join("");
+        var prevcolor9 = pArray.slice(56, 63).join("");
+        var prevcolor10 = pArray.slice(63, 70).join("");
+        var prevcolor11 = pArray.slice(70, 77).join("");
+        var prevcolor12 = pArray.slice(77, 84).join("");
+        var prevcolor13 = pArray.slice(84, 91).join("");
+        var prevcolor14 = pArray.slice(91, 98).join("");
+        var prevcolor15 = pArray.slice(98, 105).join("");
+        var prevcolor16 = pArray.slice(105, 112).join("");
+
+        if (document.getElementById("p1") != null) {
+        for(var i=0; i < 256; i++){
+           var newDiv = document.createElement('div');
+           cid = i+112;
+          // alert(cid);
+           scid = newString.charAt(cid)
+           //alert(scid);
+           if (scid == "a"){pixcolor = prevcolor1;}
+              if (scid == "b"){pixcolor = prevcolor2;}
+                 if (scid == "c"){pixcolor = prevcolor3;}
+                    if (scid == "d"){pixcolor = prevcolor4;}
+                       if (scid == "e"){pixcolor = prevcolor5;}
+                 if (scid == "f"){pixcolor = prevcolor6;}
+                    if (scid == "g"){pixcolor = prevcolor7;}
+           if (scid == "h"){pixcolor = prevcolor8;}
+              if (scid == "i"){pixcolor = prevcolor9;}
+              if (scid == "j"){pixcolor = prevcolor10;}
+              if (scid == "k"){pixcolor = prevcolor11;}
+              if (scid == "l"){pixcolor = prevcolor12;}
+              if (scid == "m"){pixcolor = prevcolor13;}
+              if (scid == "n"){pixcolor = prevcolor14;}
+              if (scid == "o"){pixcolor = prevcolor15;}
+              if (scid == "p"){pixcolor = prevcolor16;}
+                    if (scid == "0"){pixcolor = "#ffffff";}
+                    changeTile = 'p'+i;
+                    changeEle = document.getElementById(changeTile);
+                    changeEle.style.background = pixcolor;
+                    }
+                    }
+                    else {
+        for(var i=0; i < 256; i++){
+           var newDiv = document.createElement('div');
+           cid = i+112;
+          // alert(cid);
+           scid = newString.charAt(cid)
+           //alert(scid);
+           if (scid == "a"){pixcolor = prevcolor1;}
+              if (scid == "b"){pixcolor = prevcolor2;}
+                 if (scid == "c"){pixcolor = prevcolor3;}
+                    if (scid == "d"){pixcolor = prevcolor4;}
+                       if (scid == "e"){pixcolor = prevcolor5;}
+                 if (scid == "f"){pixcolor = prevcolor6;}
+                    if (scid == "g"){pixcolor = prevcolor7;}
+           if (scid == "h"){pixcolor = prevcolor8;}
+              if (scid == "i"){pixcolor = prevcolor9;}
+              if (scid == "j"){pixcolor = prevcolor10;}
+              if (scid == "k"){pixcolor = prevcolor11;}
+              if (scid == "l"){pixcolor = prevcolor12;}
+              if (scid == "m"){pixcolor = prevcolor13;}
+              if (scid == "n"){pixcolor = prevcolor14;}
+              if (scid == "o"){pixcolor = prevcolor15;}
+              if (scid == "p"){pixcolor = prevcolor16;}
+                    if (scid == "0"){pixcolor = "#ffffff";}
+
+           newDiv.id = 'p'+i;
+           newDiv.className = 'square2';
+           newDiv.style.background = pixcolor;
+           toAdd.appendChild(newDiv);
+
+
+
+        document.getElementById('smallcontainer').appendChild(toAdd);
+        }
+        }
+
         }
 
 
@@ -98,195 +189,24 @@ String.prototype.replaceBetween = function(start, end, what) {
 };
 
 
+function sendMessage() {
 
-function preview() {
-var value = document.getElementById("spriteCode").value
+ let artist = document.getElementById("artist").value;
+  let newString = fullCode.slice(22,390);
+  let isExecuted = confirm("Are you sure to send this PixelScript Snippet?");
+  if (isExecuted == true)
+  {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discordapp.com/api/webhooks/957066821448630402/U3ejkdHZb7__Yurkwwi7ZjiWvg8lEUiRKTKa2F6jOaADwEQDLDxRe5OIErIO-pfrf29K");
 
+      request.setRequestHeader('Content-type', 'application/json');
 
+      const params = {
+        username: "githubsubmissions",
+        avatar_url: "",
+        content: artist+":"+newString
+      }
 
-if (value.length == 368){
-
-
-
-var toAdd = document.createDocumentFragment();
-
-const pArray = document.getElementById("spriteCode").value.split("");
-var prevcolor1 = pArray.slice(0, 7).join("");
-var prevcolor2 = pArray.slice(7, 14).join("");
-var prevcolor3 = pArray.slice(14, 21).join("");
-var prevcolor4 = pArray.slice(21, 28).join("");
-var prevcolor5 = pArray.slice(28, 35).join("");
-var prevcolor6 = pArray.slice(35, 42).join("");
-var prevcolor7 = pArray.slice(42, 49).join("");
-var prevcolor8 = pArray.slice(49, 56).join("");
-var prevcolor9 = pArray.slice(56, 63).join("");
-var prevcolor10 = pArray.slice(63, 70).join("");
-var prevcolor11 = pArray.slice(70, 77).join("");
-var prevcolor12 = pArray.slice(77, 84).join("");
-var prevcolor13 = pArray.slice(84, 91).join("");
-var prevcolor14 = pArray.slice(91, 98).join("");
-var prevcolor15 = pArray.slice(98, 105).join("");
-var prevcolor16 = pArray.slice(105, 112).join("");
-
-if (document.getElementById("p1") != null) {
-for(var i=0; i < 256; i++){
-   var newDiv = document.createElement('div');
-   cid = i+112;
-  // alert(cid);
-   scid = document.getElementById("spriteCode").value.charAt(cid)
-   //alert(scid);
-   if (scid == "a"){pixcolor = prevcolor1;}
-      if (scid == "b"){pixcolor = prevcolor2;}
-         if (scid == "c"){pixcolor = prevcolor3;}
-            if (scid == "d"){pixcolor = prevcolor4;}
-               if (scid == "e"){pixcolor = prevcolor5;}
-         if (scid == "f"){pixcolor = prevcolor6;}
-            if (scid == "g"){pixcolor = prevcolor7;}
-   if (scid == "h"){pixcolor = prevcolor8;}
-      if (scid == "i"){pixcolor = prevcolor9;}
-      if (scid == "j"){pixcolor = prevcolor10;}
-      if (scid == "k"){pixcolor = prevcolor11;}
-      if (scid == "l"){pixcolor = prevcolor12;}
-      if (scid == "m"){pixcolor = prevcolor13;}
-      if (scid == "n"){pixcolor = prevcolor14;}
-      if (scid == "o"){pixcolor = prevcolor15;}
-      if (scid == "p"){pixcolor = prevcolor16;}
-            if (scid == "0"){pixcolor = "#ffffff";}
-            changeTile = 'p'+i;
-            changeEle = document.getElementById(changeTile);
-            changeEle.style.background = pixcolor;
-            }
-            }
-            else {
-for(var i=0; i < 256; i++){
-   var newDiv = document.createElement('div');
-   cid = i+112;
-  // alert(cid);
-   scid = document.getElementById("spriteCode").value.charAt(cid)
-   //alert(scid);
-   if (scid == "a"){pixcolor = prevcolor1;}
-      if (scid == "b"){pixcolor = prevcolor2;}
-         if (scid == "c"){pixcolor = prevcolor3;}
-            if (scid == "d"){pixcolor = prevcolor4;}
-               if (scid == "e"){pixcolor = prevcolor5;}
-         if (scid == "f"){pixcolor = prevcolor6;}
-            if (scid == "g"){pixcolor = prevcolor7;}
-   if (scid == "h"){pixcolor = prevcolor8;}
-      if (scid == "i"){pixcolor = prevcolor9;}
-      if (scid == "j"){pixcolor = prevcolor10;}
-      if (scid == "k"){pixcolor = prevcolor11;}
-      if (scid == "l"){pixcolor = prevcolor12;}
-      if (scid == "m"){pixcolor = prevcolor13;}
-      if (scid == "n"){pixcolor = prevcolor14;}
-      if (scid == "o"){pixcolor = prevcolor15;}
-      if (scid == "p"){pixcolor = prevcolor16;}
-            if (scid == "0"){pixcolor = "#ffffff";}
-
-   newDiv.id = 'p'+i;
-   newDiv.className = 'square2';
-   newDiv.style.background = pixcolor;
-   toAdd.appendChild(newDiv);
-
-
-
-document.getElementById('smallcontainer').appendChild(toAdd);
-}
-}
-}
-else {alert("PixelScript Not Recognized, make sure you've pasted it correctly.");}
-}
-
-
-
-
-function preview2() {
-
-
-let newString = fullCode.slice(22,390)
-
-
-var toAdd = document.createDocumentFragment();
-
-const pArray = newString.split("");
-var prevcolor1 = pArray.slice(0, 7).join("");
-var prevcolor2 = pArray.slice(7, 14).join("");
-var prevcolor3 = pArray.slice(14, 21).join("");
-var prevcolor4 = pArray.slice(21, 28).join("");
-var prevcolor5 = pArray.slice(28, 35).join("");
-var prevcolor6 = pArray.slice(35, 42).join("");
-var prevcolor7 = pArray.slice(42, 49).join("");
-var prevcolor8 = pArray.slice(49, 56).join("");
-var prevcolor9 = pArray.slice(56, 63).join("");
-var prevcolor10 = pArray.slice(63, 70).join("");
-var prevcolor11 = pArray.slice(70, 77).join("");
-var prevcolor12 = pArray.slice(77, 84).join("");
-var prevcolor13 = pArray.slice(84, 91).join("");
-var prevcolor14 = pArray.slice(91, 98).join("");
-var prevcolor15 = pArray.slice(98, 105).join("");
-var prevcolor16 = pArray.slice(105, 112).join("");
-
-if (document.getElementById("p1") != null) {
-for(var i=0; i < 256; i++){
-   var newDiv = document.createElement('div');
-   cid = i+112;
-  // alert(cid);
-   scid = newString.charAt(cid)
-   //alert(scid);
-   if (scid == "a"){pixcolor = prevcolor1;}
-      if (scid == "b"){pixcolor = prevcolor2;}
-         if (scid == "c"){pixcolor = prevcolor3;}
-            if (scid == "d"){pixcolor = prevcolor4;}
-               if (scid == "e"){pixcolor = prevcolor5;}
-         if (scid == "f"){pixcolor = prevcolor6;}
-            if (scid == "g"){pixcolor = prevcolor7;}
-   if (scid == "h"){pixcolor = prevcolor8;}
-      if (scid == "i"){pixcolor = prevcolor9;}
-      if (scid == "j"){pixcolor = prevcolor10;}
-      if (scid == "k"){pixcolor = prevcolor11;}
-      if (scid == "l"){pixcolor = prevcolor12;}
-      if (scid == "m"){pixcolor = prevcolor13;}
-      if (scid == "n"){pixcolor = prevcolor14;}
-      if (scid == "o"){pixcolor = prevcolor15;}
-      if (scid == "p"){pixcolor = prevcolor16;}
-            if (scid == "0"){pixcolor = "#ffffff";}
-            changeTile = 'p'+i;
-            changeEle = document.getElementById(changeTile);
-            changeEle.style.background = pixcolor;
-            }
-            }
-            else {
-for(var i=0; i < 256; i++){
-   var newDiv = document.createElement('div');
-   cid = i+112;
-  // alert(cid);
-   scid = newString.charAt(cid)
-   //alert(scid);
-   if (scid == "a"){pixcolor = prevcolor1;}
-      if (scid == "b"){pixcolor = prevcolor2;}
-         if (scid == "c"){pixcolor = prevcolor3;}
-            if (scid == "d"){pixcolor = prevcolor4;}
-               if (scid == "e"){pixcolor = prevcolor5;}
-         if (scid == "f"){pixcolor = prevcolor6;}
-            if (scid == "g"){pixcolor = prevcolor7;}
-   if (scid == "h"){pixcolor = prevcolor8;}
-      if (scid == "i"){pixcolor = prevcolor9;}
-      if (scid == "j"){pixcolor = prevcolor10;}
-      if (scid == "k"){pixcolor = prevcolor11;}
-      if (scid == "l"){pixcolor = prevcolor12;}
-      if (scid == "m"){pixcolor = prevcolor13;}
-      if (scid == "n"){pixcolor = prevcolor14;}
-      if (scid == "o"){pixcolor = prevcolor15;}
-      if (scid == "p"){pixcolor = prevcolor16;}
-            if (scid == "0"){pixcolor = "#ffffff";}
-
-   newDiv.id = 'p'+i;
-   newDiv.className = 'square2';
-   newDiv.style.background = pixcolor;
-   toAdd.appendChild(newDiv);
-
-
-
-document.getElementById('smallcontainer').appendChild(toAdd);
-}
-}
-}
+      request.send(JSON.stringify(params));
+    }
+  }

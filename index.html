@@ -17,6 +17,10 @@
   text-align: center;
   font-size: 30px;
 }
+.header2 {
+padding: 5px;
+text-align: center;
+}
     .notice {
 
 
@@ -104,10 +108,17 @@
 
 
   <h>PixelScript Editor</h>
-
-    </div>
-  <body>
+</div>
+<body>
+    <div class="header2">
 <script src="script.js"></script>
+
+ <input type="text" id="artist" name="artist" size="20" placeholder="Artist Name">
+ <button onclick="sendMessage()">Submit to PixelScript Community</button>
+ <a href= "https://discord.gg/fYqcqr3Q68" target="_blank"><button id="discord">Join us on Discord</button></a>
+</div>
+
+
       <div class="container">
 
 <div class="square" onclick="mouseoverFunc(this)" id="1"></div>
@@ -505,6 +516,8 @@ Colors will become locked once used on the canvas.
 </div>
 
 
+ <div class="smallcontainer" id="smallcontainer">
+ </div>
 
 
 
@@ -518,12 +531,12 @@ PixelScript  Snippet: #ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#f
 
 <div class= "prevbutton">
 
-<button onclick="document.getElementById(
-             'spriteCode').value = ''"> Clear </button>
+<!--<button onclick="document.getElementById(
+ 'spriteCode').value = ''"> Clear </button>
  <input type="text" id="spriteCode" name="spriteCode" size="100">
 
 <button onclick="preview()">Generate Image from PixelSript Snippet</button>
-<button onclick="preview2()">Generate Image from Editor</button>
+-->
 
 
 
@@ -535,8 +548,6 @@ PixelScript  Snippet: #ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#ffffff#f
 
 
 
- <div class="smallcontainer" id="smallcontainer">
- </div>
 
    </body>
 </html>
